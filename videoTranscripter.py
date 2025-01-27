@@ -16,7 +16,7 @@ video = VideoFileClip(video_path)
 video.audio.write_audiofile(output_audio_path)
 
 # Load the Whisper ASR model
-model = whisper.load_model("small")
+model = whisper.load_model("medium", device="cuda")
 
 # Transcribe the extracted audio
 result = model.transcribe(output_audio_path)
